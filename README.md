@@ -1,3 +1,9 @@
+[![Version](http://img.shields.io/packagist/v/contao-community-alliance/github-payload.svg?style=flat-square)](https://packagist.org/packages/contao-community-alliance/github-payload)
+[![Stable Build Status](http://img.shields.io/travis/contao-community-alliance/github-payload/master.svg?style=flat-square)](https://travis-ci.org/contao-community-alliance/github-payload)
+[![Upstream Build Status](http://img.shields.io/travis/contao-community-alliance/github-payload/develop.svg?style=flat-square)](https://travis-ci.org/contao-community-alliance/github-payload)
+[![License](http://img.shields.io/packagist/l/contao-community-alliance/github-payload.svg?style=flat-square)](https://github.com/contao-community-alliance/github-payload/blob/master/LICENSE)
+[![Downloads](http://img.shields.io/packagist/dt/contao-community-alliance/github-payload.svg?style=flat-square)](https://packagist.org/packages/contao-community-alliance/github-payload)
+
 github webhook payload
 ======================
 
