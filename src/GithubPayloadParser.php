@@ -169,6 +169,9 @@ class GithubPayloadParser
             case 'page_build':
                 $class = 'ContaoCommunityAlliance\GithubPayload\Event\PageBuildEvent';
                 break;
+            case 'ping':
+                $class = 'ContaoCommunityAlliance\GithubPayload\Event\PingEvent';
+                break;
             case 'public':
                 $class = 'ContaoCommunityAlliance\GithubPayload\Event\PublicEvent';
                 break;

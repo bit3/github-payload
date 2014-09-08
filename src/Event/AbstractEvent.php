@@ -19,6 +19,7 @@ use JMS\Serializer\Annotation as Serializer;
  *     "issues":                      "ContaoCommunityAlliance\GithubPayload\Event\IssuesEvent",
  *     "member":                      "ContaoCommunityAlliance\GithubPayload\Event\MemberEvent",
  *     "page_build":                  "ContaoCommunityAlliance\GithubPayload\Event\PageBuildEvent",
+ *     "ping":                        "ContaoCommunityAlliance\GithubPayload\Event\PingEvent",
  *     "public":                      "ContaoCommunityAlliance\GithubPayload\Event\PublicEvent",
  *     "pull_request":                "ContaoCommunityAlliance\GithubPayload\Event\PullRequestEvent",
  *     "pull_request_review_comment": "ContaoCommunityAlliance\GithubPayload\Event\PullRequestReviewCommentEvent",
