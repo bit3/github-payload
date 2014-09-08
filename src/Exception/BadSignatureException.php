@@ -16,6 +16,7 @@ class BadSignatureException extends \InvalidArgumentException
 
     public function __construct($payload, $signature, $signatureHash, $payloadHash)
     {
+        parent::__construct('Bad signature, computed ' . $payloadHash . ' but received ' . $signature);
         $this->payload       = (string) $payload;
         $this->signature     = (string) $signature;
         $this->signatureHash = (string) $signatureHash;
