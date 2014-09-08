@@ -72,8 +72,7 @@ class GithubPayloadParser
 
         $eventName = $headers['X-Github-Event'];
 
-        fseek(STDIN, 0);
-        $payload = stream_get_contents(STDIN);
+        $payload = file_get_contents('php://input');
 
         if ($this->secret) {
             $signature = isset($headers['X-Hub-Signature']) ? $headers['X-Hub-Signature'] : null;
