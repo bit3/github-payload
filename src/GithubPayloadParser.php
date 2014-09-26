@@ -4,6 +4,9 @@ namespace ContaoCommunityAlliance\GithubPayload;
 
 use ContaoCommunityAlliance\GithubPayload\Event\AbstractEvent;
 use ContaoCommunityAlliance\GithubPayload\Exception\BadSignatureException;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
+use JMS\Serializer\EventDispatcher\PreSerializeEvent;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,7 +48,31 @@ class GithubPayloadParser
     public function getSerializer()
     {
         if (!$this->serializer) {
-            $this->serializer = SerializerBuilder::create()->build();
+            $builder = SerializerBuilder::create();
+            $builder->configureListeners(
+                function (EventDispatcher $eventDispatcher) {
+                    $eventDispatcher->addListener(
+                        'serializer.pre_deserialize',
+                        /**
+                         * Fixup inconsistences between events.
+                         *
+                         * @param PreDeserializeEvent $event
+                         */
+                        function (PreDeserializeEvent $event) {
+                            $type = $event->getType();
+
+                            if ('DateTime' == $type['name'] && is_int($event->getData())) {
+                                $date = new \DateTime();
+                                $date->setTimezone(new \DateTimeZone($type['params'][1]));
+                                $date->setTimestamp($event->getData());
+                                $data = $date->format($type['params'][0]);
+                                $event->setData($data);
+                            }
+                        }
+                    );
+                }
+            );
+            $this->serializer = $builder->build();
         }
         return $this->serializer;
     }
