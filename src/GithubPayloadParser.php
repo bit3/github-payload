@@ -5,6 +5,7 @@ namespace ContaoCommunityAlliance\GithubPayload;
 use ContaoCommunityAlliance\GithubPayload\Event\GithubEvent;
 use ContaoCommunityAlliance\GithubPayload\Exception\BadSignatureException;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 use JMS\Serializer\EventDispatcher\PreSerializeEvent;
 use JMS\Serializer\Serializer;
@@ -52,7 +53,7 @@ class GithubPayloadParser
             $builder->configureListeners(
                 function (EventDispatcher $eventDispatcher) {
                     $eventDispatcher->addListener(
-                        'serializer.pre_deserialize',
+                        Events::PRE_DESERIALIZE,
                         /**
                          * Fixup inconsistences between events.
                          *
