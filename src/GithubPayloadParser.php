@@ -62,8 +62,9 @@ class GithubPayloadParser
 
                             if (is_object($object) && $object instanceof GithubEvent) {
                                 $class = get_class($object);
+                                $type  = $event->getType();
 
-                                if ($class !== $event->getType()['name']) {
+                                if ($class !== $type['name']) {
                                     $event->setType($class);
                                 }
                             }
