@@ -8,6 +8,9 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
+/**
+ * @Serializer\ExclusionPolicy("none")
+ */
 class PullRequestReviewCommentEvent extends GithubEvent
 {
     /**

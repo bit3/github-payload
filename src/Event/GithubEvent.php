@@ -5,6 +5,7 @@ namespace ContaoCommunityAlliance\GithubPayload\Event;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
+ * @Serializer\ExclusionPolicy("none")
  * @Serializer\Discriminator(
  *   field = "type",
  *   map = {

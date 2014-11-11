@@ -8,6 +8,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
+ * @Serializer\ExclusionPolicy("none")
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
 class PageBuildEvent extends GithubEvent
