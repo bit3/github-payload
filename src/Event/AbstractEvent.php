@@ -31,6 +31,6 @@ use JMS\Serializer\Annotation as Serializer;
  *   }
  * )
  */
-abstract class AbstractEvent
+abstract class AbstractEvent implements GithubEventInterface
 {
 }
