@@ -53,6 +53,26 @@ class GithubPayloadParser
             $builder->configureListeners(
                 function (EventDispatcher $eventDispatcher) {
                     $eventDispatcher->addListener(
+                        Events::PRE_SERIALIZE,
+                        /**
+                         * Fixup issue 292, see https://github.com/schmittjoh/JMSSerializerBundle/issues/292
+                         *
+                         * @param PreSerializeEvent $event
+                         */
+                        function (PreSerializeEvent $event) {
+                            $object = $event->getObject();
+
+                            if (is_object($object) && $object instanceof GithubEvent) {
+                                $class = get_class($object);
+
+                                if ($class !== $event->getType()['name']) {
+                                    $event->setType($class);
+                                }
+                            }
+                        }
+                    );
+
+                    $eventDispatcher->addListener(
                         Events::PRE_DESERIALIZE,
                         /**
                          * Fixup inconsistences between events.
