@@ -2,7 +2,7 @@
 
 namespace ContaoCommunityAlliance\GithubPayload;
 
-use ContaoCommunityAlliance\GithubPayload\Event\AbstractEvent;
+use ContaoCommunityAlliance\GithubPayload\Event\GithubEvent;
 use ContaoCommunityAlliance\GithubPayload\Exception\BadSignatureException;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
@@ -91,7 +91,7 @@ class GithubPayloadParser
     /**
      * Parse the payload from plain php. Useful if you write a little entry script that use plain php.
      *
-     * @return AbstractEvent
+     * @return GithubEvent
      */
     public function parsePhp()
     {
@@ -115,7 +115,7 @@ class GithubPayloadParser
      *
      * @param Request $request
      *
-     * @return AbstractEvent
+     * @return GithubEvent
      */
     public function parseRequest($request)
     {
@@ -139,7 +139,7 @@ class GithubPayloadParser
      * @param string      $payload   The github payload, usually the POST body.
      * @param string|null $signature The payload signature, usually the X-Hub-Signature header.
      *
-     * @return AbstractEvent
+     * @return GithubEvent
      */
     public function parse($eventName, $payload, $signature = null)
     {

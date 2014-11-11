@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
-class DeploymentStatusEvent extends AbstractEvent
+class DeploymentStatusEvent extends GithubEvent
 {
     /**
      * @var int

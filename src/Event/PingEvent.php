@@ -6,7 +6,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class PingEvent extends AbstractEvent
+class PingEvent extends GithubEvent
 {
     /**
      * @var string

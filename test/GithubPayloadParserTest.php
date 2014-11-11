@@ -2,7 +2,7 @@
 
 namespace ContaoCommunityAlliance\GithubPayload\Test;
 
-use ContaoCommunityAlliance\GithubPayload\Event\AbstractEvent;
+use ContaoCommunityAlliance\GithubPayload\Event\GithubEvent;
 use ContaoCommunityAlliance\GithubPayload\GithubPayloadParser;
 
 class GithubPayloadParserTest extends \PHPUnit_Framework_TestCase
@@ -129,6 +129,6 @@ class GithubPayloadParserTest extends \PHPUnit_Framework_TestCase
         $event = $this->parser->parse($eventName, $payload);
 
         $this->assertNotNull($event);
-        $this->assertTrue($event instanceof AbstractEvent);
+        $this->assertTrue($event instanceof GithubEvent);
     }
 }

@@ -6,7 +6,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class PublicEvent extends AbstractEvent
+class PublicEvent extends GithubEvent
 {
     /**
      * @var Repository

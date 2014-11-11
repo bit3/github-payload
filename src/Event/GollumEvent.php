@@ -7,7 +7,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class GollumEvent extends AbstractEvent
+class GollumEvent extends GithubEvent
 {
     /**
      * @var Page[]

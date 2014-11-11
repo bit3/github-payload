@@ -8,7 +8,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class IssueCommentEvent extends AbstractEvent
+class IssueCommentEvent extends GithubEvent
 {
     /**
      * @var string

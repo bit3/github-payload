@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
-class PageBuildEvent extends AbstractEvent
+class PageBuildEvent extends GithubEvent
 {
     /**
      * @var int

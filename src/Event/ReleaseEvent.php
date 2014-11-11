@@ -7,7 +7,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Repository;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class ReleaseEvent extends AbstractEvent
+class ReleaseEvent extends GithubEvent
 {
     /**
      * @var string

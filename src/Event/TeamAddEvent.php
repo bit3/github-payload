@@ -7,7 +7,7 @@ use ContaoCommunityAlliance\GithubPayload\Meta\Team;
 use ContaoCommunityAlliance\GithubPayload\Meta\User;
 use JMS\Serializer\Annotation as Serializer;
 
-class TeamAddEvent extends AbstractEvent
+class TeamAddEvent extends GithubEvent
 {
     /**
      * @var Team

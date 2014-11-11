@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  *
  */
-class CommitCommentEvent extends AbstractEvent
+class CommitCommentEvent extends GithubEvent
 {
     /**
      * @var Comment
