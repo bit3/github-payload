@@ -4,6 +4,9 @@ namespace ContaoCommunityAlliance\GithubPayload\Meta;
 
 use JMS\Serializer\Annotation as Serializer;
 
+/**
+ * @SuppressWarnings(PHPMD.ShortVariable)
+ */
 class Hook
 {
     /**
